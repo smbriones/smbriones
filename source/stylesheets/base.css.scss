@@ -233,7 +233,7 @@ iframe {
 
 .cursor {
   background-color: transparent;
-  border-right: 2px solid $red;
+  border-right: 2px solid transparent;
   cursor: pointer;
   display: inline-block;
   width: 55px;
@@ -243,6 +243,7 @@ iframe {
 }
 
 .cursor:hover {
+  border-right: 2px solid $red;
   -webkit-animation: pulse 0.5s ease-in-out 0s infinite alternate;
 }
 
