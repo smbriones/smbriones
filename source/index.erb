@@ -2,16 +2,8 @@
 title: Stephanie Briones
 ---
 
-<header>
-  <div class="container">
-    <h2>&lt;sb&gt;<span class="cursor"></span></h2>
-    <div class="links">
-      <a href="http://twitter.com/smbriones">Twitter</a>
-      <a href="http://github.com/smbriones">Github</a>
-    </div>
-  </div>
-</header>
-<div role="content">
+<%= partial "partials/header" %>
+<div role="content" class="container">
   <div class="about">
     <h2>Hi, I'm Stephanie.</h2>
     <h1>
@@ -19,32 +11,20 @@ title: Stephanie Briones
       <a href="http://8thlight.com">8th Light, Inc.</a>
     </h1>
   </div>
-  <div class="container btcf">
+  <div class="btcf">
     <section class="statement">
-      <div class="column">
-        <p>
-          Making the web a better place is something I'm very passionate about. It's
-          exciting to me when I get the opportunity to improve the usability of
-          a web application or even just make something
-        </p>
-      </div>
-      <div class="column">
-        <p>
-          look and feel better. Nothing makes me happier than starting a new project. I
-          see everything I work on as a challenge and a chance to learn something new.
-        </p>
-      </div>
+      <p>
+        Making the web a better place is something I'm very passionate about. It's
+        exciting to me when I get the opportunity to improve the usability of
+        a web application or even just make something look and feel better.
+      </p>
+      <p>
+        Nothing makes me happier than starting a new project. I see everything
+        I work on as a challenge and a chance to learn something new.
+      </p>
     </section>
-    <section>
-      <div class="instagram_desktop"><!-- SnapWidget -->
-        <iframe style="border:none; overflow:hidden; width:800px; height: 200px" src="http://snapwidget.com/in/?u=c21icmlvbmVzfGlufDE5MHw0fDF8fG5vfDEwfG5vbmU=" frameborder="0" scrolling="no" width="320" height="240"></iframe></div>
-      <div class="instagram_inbetween"><!-- SnapWidget -->
-        <iframe src="http://snapwidget.com/in/?u=c21icmlvbmVzfGlufDE3N3w0fDF8fG5vfDV8bm9uZQ==" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:728px; height: 182px" ></iframe>
-      </div>
-      <div class="instagram_iphone_ls"><!-- SnapWidget -->
-        <iframe src="http://snapwidget.com/in/?u=c21icmlvbmVzfGlufDY1fDR8MXx8bm98NXxub25l" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:280px; height: 70px" ></iframe>
-      </div>
-    </section>
+
+    <%= partial "partials/instagram" %>
 
     <section>
       <div class="statement-mobile">
