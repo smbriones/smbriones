@@ -27,12 +27,33 @@ a {
   }
 }
 
+blockquote {
+  color: #9CA7AC;
+  font-style: italic;
+  margin: 1.5em 0;
+}
+
 hr {
   border: 0;
   height: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   margin-bottom: 1.5em;
+}
+
+.project-title {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.project-tags {
+  text-align: center;
+  margin: 0 0 3em 0;
+}
+
+.project-description {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 h2 {
@@ -148,9 +169,8 @@ header {
 }
 
 .cards {
-  overflow: hidden;
+  float: left;
   li {
-    border: 2px solid $red;
     color: #4D4D4D;
     display: block;
     font-size: 0.9em;
@@ -158,10 +178,15 @@ header {
     text-align: center;
     width: 100%;
     margin: 1em 0 0 0;
+    background: #fff;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 3px rgba(64,56,41,0.1);
+    -moz-box-shadow: 0 1px 3px rgba(64,56,41,0.2);
+    box-shadow: 0 1px 3px rgba(64,56,41,0.1);
     &:first-child {
       margin-left: 0;
     }
-    a {
+    a:last-child {
       display: block;
       margin-top: 1em;
       text-align: center;
@@ -355,6 +380,28 @@ footer {
   text-align: center;
 }
 
+.container:before,
+.container:after,
+section:before,
+section:after {
+  content: " ";
+  display: table;
+}
+
+.container:before,
+.container:after,
+section:before,
+section:after {
+  clear: both;
+}
+
+.container:before,
+.container:after,
+section:before,
+section:after {
+  *zoom: 1;
+}
+
 /*------  Media Queries  ------*/
 
 @media screen and (min-width: 480px) {
@@ -476,7 +523,6 @@ footer {
     }
   }
   .cards {
-    overflow: hidden;
     margin-bottom: 2em;
     li {
       display: block;
