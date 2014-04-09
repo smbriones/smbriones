@@ -209,8 +209,7 @@ header {
 }
 
 .about {
-  margin: 2em 0 0 0;
-  max-width: 800px;
+  margin: 2em 0;
   h1 {
     padding: 0.5em 0;
     line-height: 1.35em;
@@ -243,7 +242,6 @@ header {
   color: #444;
   font-size: 0.9em;
   overflow: hidden;
-  margin: 1em 0 2.5em 0;
   display: block;
   max-width: 600px;
   .column {
@@ -380,6 +378,8 @@ footer {
   text-align: center;
 }
 
+.row:before,
+.row:after,
 .container:before,
 .container:after,
 section:before,
@@ -388,6 +388,8 @@ section:after {
   display: table;
 }
 
+.row:before,
+.row:after,
 .container:before,
 .container:after,
 section:before,
@@ -395,6 +397,8 @@ section:after {
   clear: both;
 }
 
+.row:before,
+.row:after,
 .container:before,
 .container:after,
 section:before,
