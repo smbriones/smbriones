@@ -121,27 +121,28 @@ header {
       float: left;
     }
   }
-  .links {
-    margin-top: 0.35em;
-    margin-bottom: 1em;
-    @media (min-width: 840px) {
-      margin-bottom: 0;
-      float: right;
+}
+
+.links {
+  margin-top: 0.35em;
+  margin-bottom: 1em;
+  @media (min-width: 840px) {
+    margin-bottom: 0;
+    float: right;
+  }
+  a {
+    border-bottom: 1px solid transparent;
+    color: $white;
+    font-size: 0.6em;
+    letter-spacing: 1px;
+    margin-right: 2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover {
+      border-bottom: 1px solid $white;
     }
-    a {
-      border-bottom: 1px solid transparent;
-      color: $white;
-      font-size: 0.6em;
-      letter-spacing: 1px;
-      margin-right: 2em;
-      text-decoration: none;
-      text-transform: uppercase;
-      &:hover {
-        border-bottom: 1px solid $white;
-      }
-      &:last-child {
-        margin-right: 0;
-      }
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
@@ -169,7 +170,6 @@ header {
 }
 
 .cards {
-  float: left;
   li {
     color: #4D4D4D;
     display: block;
@@ -373,10 +373,21 @@ footer {
   border-top: 1px solid $light-gray;
   color: #A8B1B4;
   font-size: 0.8em;
-  margin-top: 2em;
+  margin: 2em 0 0 0;
   min-height: 60px;
   padding: 1em 0;
   text-align: center;
+  .links {
+    float: left;
+    margin: 0;
+    a {
+      color: $red;
+      display: inline-block;
+      font-size: 0.7em;
+      line-height: 3em;
+      margin: 0 2em 0 0;
+    }
+  }
 }
 
 .row:before,
@@ -527,6 +538,7 @@ section:after {
     }
   }
   .cards {
+    float: left;
     margin-bottom: 2em;
     li {
       display: block;
