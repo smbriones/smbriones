@@ -26,6 +26,11 @@ a {
   }
 }
 
+::selection {
+  background: $light-gray;
+  color: $white;
+}
+
 img {
   width: 100%;
 }
@@ -462,8 +467,6 @@ section {
       display: block;
     }
     img {
-      display: block;
-      float: left;
       width: 25%;
     }
   }
@@ -585,8 +588,6 @@ section {
       display: block;
     }
     img {
-      display: block;
-      float: left;
       width: 20%;
     }
   }
@@ -607,6 +608,9 @@ section {
       .divide {
         margin: 1em 0 0 0;
         padding-bottom: 0.8em;
+      }
+      .tag {
+        font-size: 0.5em;
       }
     }
   }
