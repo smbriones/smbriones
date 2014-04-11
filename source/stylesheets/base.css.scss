@@ -4,7 +4,6 @@ $dark-gray: #222;
 $light-gray: #CED3D5;
 $red: #FF574A;
 $white: #f7f5f3;
-$orange: #F7A541;
 
 *, *:before, *:after {
   @include box-sizing(border-box);
@@ -273,9 +272,6 @@ button {
   border-radius: 4px;
   display: inline-block;
   padding: 10px 14px;
-  &:hover {
-    background: $orange;
-  }
 }
 
 .tag {
@@ -417,17 +413,20 @@ section {
   .intro {
     padding: 1em;
     h4 {
-      color: $red;
+      color: $dark-gray;
       margin: 0.5em 0 0.2em 0;
+      font-size: 1.6em;
+      line-height: 1.2em;
     }
     h5 {
-      margin: 0;
+      margin: 0 0 2em 0;
     }
     .tag {
-      margin: 3em 0 0 0;
+      margin: 0;
     }
     .divide {
       margin: 1em 0 0 0;
+      padding-bottom: 0.8em;
     }
   }
   a {
@@ -566,6 +565,20 @@ section {
       display: block;
       float: left;
       width: 20%;
+      h4 {
+        margin: 0.3em 0 0.2em 0;
+        font-size: 1.6em;
+      }
+      h5 {
+        margin: 0 0 1.5em 0;
+      }
+      .divide {
+        margin: 0.6em 0 0 0;
+        padding-bottom: 0.5em;
+      }
+      .tag {
+        font-size: 0.4em;
+      }
     }
     a {
       width: 100%;
@@ -575,6 +588,26 @@ section {
       display: block;
       float: left;
       width: 20%;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  #instafeed {
+    .intro {
+      display: block;
+      float: left;
+      width: 20%;
+      h4 {
+        font-size: 1.8em;
+      }
+      h5 {
+        margin: 0 0 3em 0;
+      }
+      .divide {
+        margin: 1em 0 0 0;
+        padding-bottom: 0.8em;
+      }
     }
   }
 }
