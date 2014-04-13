@@ -49,11 +49,6 @@ hr {
   margin-bottom: 1.5em;
 }
 
-h2 {
-  font-size: 1.3em;
-  line-height: 1.4em;
-}
-
 .headline {
   color: #84949B;
   font-style: italic;
@@ -63,6 +58,10 @@ h2 {
   margin: 2em auto 2em auto;
   max-width: 780px;
   text-align: center;
+}
+
+h2 {
+  font-size: 1em;
 }
 
 h3 {
@@ -375,6 +374,10 @@ button, .button {
 .project-description {
   max-width: 700px;
   margin: 0 auto 4em auto;
+  h2 {
+    font-size: 1.3em;
+    line-height: 1.4em;
+  }
 }
 
 
