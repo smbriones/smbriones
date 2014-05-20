@@ -130,6 +130,7 @@ header {
     color: $white;
     display: inline-block;
     font-size: 1em;
+    font-weight: 600;
     margin: 0.5em 0;
     @media (min-width: 840px) {
       float: left;
@@ -141,7 +142,7 @@ header {
   margin-top: 0.35em;
   margin-bottom: 1em;
   @media (min-width: 840px) {
-    margin-bottom: 0;
+    margin-bottom: 0.7em;
     float: right;
   }
   a {
