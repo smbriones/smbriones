@@ -101,6 +101,9 @@ ul {
   li {
     margin-bottom: 0.5em;
   }
+  &.book-title li a {
+    margin-right: 0.6em;
+  }
 }
 
 .container {
@@ -316,7 +319,7 @@ button, .button {
   display: inline-block;
   line-height: 1em;
   vertical-align: top;
-  margin: 0.7em 0 0 0.6em;
+  margin: 0.7em 0 0 0;
 }
 
 .blend {
@@ -352,15 +355,6 @@ button, .button {
     margin-left: -135px;
     width: 135px;
   }
-}
-
-.apprenticeship-image {
-  background: url("/images/type.png") $white;
-  background-size: cover;
-  background-position: center 30%;
-  background-repeat: no-repeat;
-  min-height: 300px;
-  margin-top: -0.4em;
 }
 
 .syllabus-nav {
