@@ -15,7 +15,7 @@ img {
   display: block;
   width: 100%;
   @media (max-width: 600px) {
-    margin-bottom: 1em;
+    margin: 1em auto;
   }
 }
 
@@ -227,7 +227,7 @@ header {
 }
 
 .intro {
-  padding: 1em 0;
+  padding: 2em 0;
   h2 {
     color: $light-gray;
     font-family: 'Rock Salt', cursive;
@@ -235,6 +235,9 @@ header {
     line-height: 1.5em;
     margin: 0;
     text-align: center;
+    @media (max-width: 600px) {
+      font-size: 2em;
+    }
   }
 }
 
