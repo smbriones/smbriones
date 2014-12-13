@@ -118,10 +118,16 @@ a {
 
   &.belfast-hero {
     background-image: url(/images/belfast-hero.jpg);
+    @media (max-width: 600px) {
+      background-image: none;
+    }
   }
 
   &.california-hero {
     background-image: url(/images/mountains.jpg);
+    @media (max-width: 600px) {
+      background-image: none;
+    }
   }
 
   @media (max-width: 600px) {
@@ -197,16 +203,21 @@ header {
 
   &.belfast-logo {
     background: rgba(78, 187, 148, 0.5);
+    @media (max-width: 600px) {
+      background: rgba(78, 187, 148, 1);
+    }
   }
 
   &.california-logo {
-    background: rgba(187, 78, 78, 0.5);
     background: rgba(187, 78, 170, 0.5);
+    @media (max-width: 600px) {
+      background: rgba(187, 78, 170, 1);
+    }
   }
 
   @media (max-width: 600px) {
     position: relative;
-    padding: 17em 0 3.5em 0;
+    padding: 12em 0 3.5em 0;
   }
 
   @media (min-width: 1450px) {
