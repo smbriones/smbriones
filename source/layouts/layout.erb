@@ -10,12 +10,15 @@
     <%= stylesheet_link_tag "normalize", "base", "learning-js" %>
     <%= javascript_include_tag  "all" %>
     <link href="images/favicon.ico" rel="icon" type="image/ico" />
-    <script type="text/javascript" src="//use.typekit.net/acl0lxc.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script src="//use.typekit.net/blr5lzf.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
   </head>
   <body>
     <%= yield %>
 
+
+    <!--
+    // Instagram Plugin
     <script type="text/javascript">
         var feed = new Instafeed({
             get: 'user',
@@ -28,6 +31,7 @@
         });
         feed.run();
     </script>
+    -->
 
   </body>
 </html>
