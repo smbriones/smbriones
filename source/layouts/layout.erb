@@ -10,24 +10,10 @@
     <%= stylesheet_link_tag "normalize", "base", "learning-js" %>
     <%= javascript_include_tag  "all" %>
     <link href="images/favicon.ico" rel="icon" type="image/ico" />
-    <script type="text/javascript" src="//use.typekit.net/acl0lxc.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script src="//use.typekit.net/blr5lzf.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
   </head>
   <body>
     <%= yield %>
-
-    <script type="text/javascript">
-        var feed = new Instafeed({
-            get: 'user',
-            userId: 2631661,
-            accessToken: '2631661.467ede5.0c33c35d43ae49adb0dae068c2fddf36',
-            link: 'true',
-            clientId: '1ae347c7ecde409098a9fb6f68683f63',
-            limit: '29',
-            resolution: 'standard_resolution'
-        });
-        feed.run();
-    </script>
-
   </body>
 </html>
