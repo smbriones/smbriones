@@ -77,7 +77,7 @@ h3 {
 h4 {
   font-size: 1.3em;
   font-weight: 600;
-  line-height: 1.5em;
+  line-height: 1.3em;
   margin: 0.8em 0 1em 0;
 }
 
@@ -215,6 +215,9 @@ header {
     letter-spacing: 1px;
     text-align: center;
     text-transform: uppercase;
+    @media(max-width: 640px) {
+      font-size: 0.6em;
+    }
   }
   a {
     color: $light-gray;
@@ -295,21 +298,24 @@ img {
     padding: 1em;
     position: relative;
     text-decoration: none;
-    @media(max-width: 640px) {
-      height: 300px;
-    }
 
     &.adventures {
       background: #4ebb94 url(/work/projects/assets/adventures.png);
       background-size: 260px;
       background-repeat: no-repeat;
       background-position: center;
+      @media(max-width: 640px) {
+        background-size: 200px;
+      }
     }
     &.footprints {
       background: #576978 url(/work/projects/assets/footprints.png);
       background-size: 300px;
       background-repeat: no-repeat;
       background-position: center;
+      @media(max-width: 640px) {
+        background-size: 200px;
+      }
     }
     &.sherlac {
       background: #e76f5c url(/work/projects/assets/sherlac.png);
@@ -322,6 +328,9 @@ img {
       background-size: 300px;
       background-repeat: no-repeat;
       background-position: center;
+      @media(max-width: 640px) {
+        background-size: 200px;
+      }
     }
     &.apprenticeship {
       background: $dark-gray url(/work/projects/assets/apprenticeship.png);
@@ -346,10 +355,18 @@ img {
       background-size: 300px;
       background-repeat: no-repeat;
       background-position: center;
+      @media(max-width: 640px) {
+        background-size: 200px;
+      }
       p {
         color: #222;
       }
     }
+
+    @media(max-width: 640px) {
+      height: 300px;
+    }
+
 
     p {
       background: rgba(0,0,0,0.1);
