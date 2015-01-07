@@ -285,63 +285,95 @@ img {
       margin-bottom: 0.6em;
       width: 100%;
     }
-
-    h1 {
-      font-size: 2em;
-      position: absolute;
-      text-align: center;
-      padding: 4.96em 0;
-      left: 0;
-      right: 0;
-      @media(max-width: 640px) {
-        font-size: 1.5em;
-        padding: 4.3em 0;
-      }
-    }
   }
 
   a {
     background: $dark-gray;
     cursor: pointer;
     display: block;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 450px;
-    max-width: 700px;
-    opacity: 0.2;
-
-    &:hover {
-      opacity: 0.25;
-    }
-
+    padding: 1em;
+    position: relative;
+    text-decoration: none;
     @media(max-width: 640px) {
       height: 300px;
     }
 
     &.adventures {
-      background-image: url(/work/projects/assets/adventures.png);
+      background: #4ebb94 url(/work/projects/assets/adventures.png);
+      background-size: 260px;
+      background-repeat: no-repeat;
+      background-position: center;
     }
     &.footprints {
-      background-image: url(/work/projects/assets/footprints-icons.png);
+      background: #576978 url(/work/projects/assets/footprints.png);
+      background-size: 300px;
+      background-repeat: no-repeat;
+      background-position: center;
     }
     &.sherlac {
-      background-image: url(/work/projects/assets/Sherlac-Results.png);
+      background: #e76f5c url(/work/projects/assets/sherlac.png);
+      background-size: 100px;
+      background-repeat: no-repeat;
+      background-position: center;
     }
     &.sazzy {
-      background-image: url(/work/projects/assets/sazerwat.png);
+      background: #ccb885 url(/work/projects/assets/sazzy.png);
+      background-size: 300px;
+      background-repeat: no-repeat;
+      background-position: center;
     }
     &.apprenticeship {
-      background-image: url(/work/projects/assets/apprenticeship.png);
+      background: $dark-gray url(/work/projects/assets/apprenticeship.png);
+      background-size: 100px;
+      background-repeat: no-repeat;
+      background-position: center;
     }
     &.nocci {
-      background-image: url(/work/projects/assets/icon-font.png);
+      background: #2a9dbe url(/work/projects/assets/nocci.png);
+      background-size: 150px;
+      background-repeat: no-repeat;
+      background-position: center;
     }
     &.craftsman-swap {
-      background-image: url(/work/projects/assets/craftsman-swap.jpg);
+      background: #5D45A0 url(/work/projects/assets/apprenticeship.png);
+      background-size: 100px;
+      background-repeat: no-repeat;
+      background-position: center;
     }
     &.animations {
-      background-image: url(/work/projects/assets/animations.png);
+      background: #fafafa url(/work/projects/assets/animations.png);
+      background-size: 300px;
+      background-repeat: no-repeat;
+      background-position: center;
+      p {
+        color: #222;
+      }
+    }
+
+    p {
+      background: rgba(0,0,0,0.1);
+      font-size: 1.2em;
+      line-height: 1.2em;
+      margin: 0;
+      padding: 1.5em;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      visibility: hidden;
+      opacity:0;
+      transition:opacity 0.3s linear;
+      @media(max-width: 640px) {
+        padding: 0.8em;
+      }
+    }
+  }
+  a:hover {
+    p {
+      visibility: visible;
+      opacity:1;
     }
   }
 }
