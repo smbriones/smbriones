@@ -11,7 +11,6 @@ $mustard: #bba94f;
 }
 
 body {
-  background: $white;
   background: #3A4449;
   color: $white;
   font-family: "brandon-grotesque",sans-serif;
@@ -90,6 +89,10 @@ h5 {
   text-transform: uppercase;
 }
 
+p {
+  margin: 1em 0;
+}
+
 em {
   font-family: "brandon-grotesque",sans-serif;
   font-style: italic;
@@ -140,6 +143,7 @@ header {
     border-bottom: none;
     color: #fff;
     display: inline-block;
+    float: none;
     font-size: 1em;
     font-weight: 400;
     line-height: 1.5em;
@@ -153,7 +157,7 @@ header {
 
 .links {
   overflow: hidden;
-  @media (min-width: 680px) {
+  @media (min-width: 840px) {
     float: right;
   }
   li {
@@ -171,7 +175,7 @@ header {
         color: $mustard;
       }
     }
-    @media (min-width: 680px) {
+    @media (min-width: 840px) {
       font-size: 1em;
       padding-right: 2em;
     }
@@ -243,12 +247,6 @@ header {
       color: $mustard;
     }
   }
-}
-
-img {
-  display: block;
-  float: left;
-  width: 100%;
 }
 
 .cards {
@@ -544,7 +542,11 @@ button, .button, a.button {
     color: $white;
     font-size: 1em;
     font-weight: 400;
-    margin: 0;
+    margin: 0 0 1em 0;
+    @media (min-width: 840px) {
+      float: left;
+      margin: 0;
+    }
   }
   .cursor {
     margin-left: -135px;
@@ -605,10 +607,13 @@ button, .button, a.button {
     line-height: 1.4em;
   }
   h5 {
-    margin: 2.6em 0 1em 0;
+    margin: 1em 0;
+  }
+  p {
+    margin: 0 0 1.5em 0;
   }
   img {
-    margin-bottom: 2em;
+    margin-bottom: 0.5em;
   }
 }
 
@@ -626,7 +631,7 @@ footer {
     a {
       color: inherit;
       display: inline-block;
-      font-size: 0.7em;
+      font-size: 0.8em;
       margin: 0 2em 0 0;
     }
   }
