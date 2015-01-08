@@ -118,7 +118,7 @@ ul {
   &.work {
     margin-top: 2em;
     @media (max-width: 840px) {
-      margin-top: 1.2em;
+      margin-top: 1em;
     }
   }
 }
@@ -293,7 +293,7 @@ img {
     position: relative;
     width: 50%;
     @media(max-width: 640px) {
-      margin-bottom: 0.6em;
+      margin-bottom: 1em;
       width: 100%;
     }
   }
