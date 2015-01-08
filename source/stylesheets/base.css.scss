@@ -143,23 +143,22 @@ header {
     font-size: 1em;
     font-weight: 400;
     line-height: 1.5em;
-    margin: 0;
-    @media (max-width: 840px) {
-      margin-bottom: 1em;
-    }
+    margin: 0 0 1em 0;
     @media (min-width: 840px) {
       float: left;
+      margin: 0;
     }
   }
 }
 
 .links {
   overflow: hidden;
-  @media (min-width: 840px) {
+  @media (min-width: 680px) {
     float: right;
   }
   li {
-    display: block;
+    display: inline-block;
+    font-size: 0.8em;
     margin: 0;
     padding-right: 2em;
     a {
@@ -172,10 +171,20 @@ header {
         color: $mustard;
       }
     }
+    @media (min-width: 680px) {
+      font-size: 1em;
+      padding-right: 2em;
+    }
     &:last-child {
       padding-right: 0;
     }
-    @media (min-width: 840px) {
+  }
+  &.footer {
+    display: block;
+  }
+  .work-link {
+    display: none;
+    @media (min-width: 900px) {
       display: inline-block;
     }
   }
@@ -206,7 +215,7 @@ header {
 }
 
 .intro {
-  padding: 6em 0;
+  padding: 5.5em 0;
   text-align: center;
   h1 {
     color: $white;
@@ -223,7 +232,7 @@ header {
     letter-spacing: 1px;
     text-align: center;
     text-transform: uppercase;
-    @media(max-width: 640px) {
+    @media(max-width: 480px) {
       font-size: 0.6em;
     }
   }
@@ -312,7 +321,7 @@ img {
       background-size: 260px;
       background-repeat: no-repeat;
       background-position: center;
-      @media(max-width: 640px) {
+      @media(max-width: 840px) {
         background-size: 200px;
       }
     }
@@ -321,7 +330,7 @@ img {
       background-size: 300px;
       background-repeat: no-repeat;
       background-position: center;
-      @media(max-width: 640px) {
+      @media(max-width: 840px) {
         background-size: 200px;
       }
     }
@@ -336,7 +345,7 @@ img {
       background-size: 300px;
       background-repeat: no-repeat;
       background-position: center;
-      @media(max-width: 640px) {
+      @media(max-width: 840px) {
         background-size: 200px;
       }
     }
@@ -363,7 +372,7 @@ img {
       background-size: 300px;
       background-repeat: no-repeat;
       background-position: center;
-      @media(max-width: 640px) {
+      @media(max-width: 840px) {
         background-size: 200px;
       }
       p {
@@ -463,17 +472,31 @@ img {
   }
 }
 
-button, .button {
+button, .button, a.button {
   background: $mustard;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   color: $white;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
   display: inline-block;
+  font-weight: 600;
   padding: 10px 14px;
   text-decoration: none;
+  transition: background 0.1s linear;
+  &.landing {
+    border: 2px solid $mustard;
+    background: transparent;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    margin-top: 4em;
+    text-transform: uppercase;
+    @media (min-width: 680px) {
+     display: none;
+    }
+  }
   &:hover {
-    background: darken( $mustard, 5% );
+    background: $mustard;
+    color: #fff;
   }
 }
 
@@ -596,7 +619,6 @@ footer {
   margin-top: 2em;
   min-height: 60px;
   padding: 1em 0;
-  text-align: center;
   .links {
     padding: 0;
     float: left;
