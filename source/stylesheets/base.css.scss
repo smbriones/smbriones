@@ -12,7 +12,7 @@ $mustard: #bba94f;
 
 body {
   background: #3A4449;
-  color: $white;
+  color: #C7CDD0;
   font-family: "brandon-grotesque",sans-serif;
   font-size: 110%;
   font-style: normal;
@@ -20,7 +20,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: $white;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -50,6 +50,8 @@ hr {
   margin-bottom: 1.5em;
 }
 
+h1, h2, h3, h4, h5 { color: $white; }
+
 h1 {
   font-family: "brandon-grotesque",sans-serif;
   font-size: 2.6em;
@@ -67,7 +69,6 @@ h2 {
 }
 
 h3 {
-  color: $white;
   font-size: 1.5em;
   font-weight: 500;
   padding: 1em 0 0 0;
