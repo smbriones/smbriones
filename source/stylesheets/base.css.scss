@@ -196,7 +196,7 @@ header {
 }
 
 .sub-nav {
-  background: $mustard;
+  background: darken($dark-gray, 6%);
   padding: 0 1em;
   text-align: center;
   ul {
@@ -556,6 +556,7 @@ button, .button, a.button {
 }
 
 .syllabus-nav {
+  border-bottom: 1px solid darken($dark-gray, 5%);
   padding: 1em 0;
   a {
     color: $white;
