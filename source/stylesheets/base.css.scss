@@ -379,6 +379,125 @@ header {
       }
     }
 
+    // Snippets
+    &.artisan {
+      background: #f1f1f1 url(/snippets/assets/artisan.png);
+      background-size: 400px;
+      background-repeat: no-repeat;
+      background-position: center;
+      p {
+        color: #222;
+      }
+    }
+    &.red-well {
+      background: #f1f1f1 url(/snippets/assets/red-well.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: default;
+    }
+    &.knight {
+      background: #f1f1f1 url(/snippets/assets/knight.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: default;
+    }
+    &.vision-map {
+      background: #f1f1f1 url(/snippets/assets/vision-map.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: default;
+    }
+    &.practice-areas {
+      background: #f1f1f1 url(/snippets/assets/vision-icons.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &.fletching {
+      background: #f1f1f1 url(/snippets/assets/fletching.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &.axus {
+      background: #f1f1f1 url(/snippets/assets/axus.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &.jetset {
+      background: #f1f1f1 url(/snippets/assets/jetset.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &.pm-mockups {
+      background: #f1f1f1 url(/snippets/assets/PM-Assumptions-Disclosure.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: default;
+    }
+    &.rescue-press {
+      background: #f1f1f1 url(/snippets/assets/rescuepress.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left center;
+      cursor: default;
+    }
+    &.WIO-banner {
+      background: #f1f1f1 url(/snippets/assets/WIO-banner.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left center;
+      cursor: default;
+    }
+    &.WIO-styleguide {
+      background: #f1f1f1 url(/snippets/assets/WIO-styleguide.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left top;
+      cursor: default;
+    }
+    &.vs-mockups {
+      background: #f1f1f1 url(/snippets/assets/VS-mockups.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left top;
+      cursor: default;
+    }
+    &.mage {
+      background: #f1f1f1 url(/snippets/assets/mage.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: default;
+    }
+    &.g-listing {
+      background: #f1f1f1 url(/snippets/assets/g-listing.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      cursor: default;
+    }
+    &.gbr-form {
+      background: #f1f1f1 url(/snippets/assets/gbr-form.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left top;
+      cursor: default;
+    }
+    &.holiday-card {
+      background: #f1f1f1 url(/snippets/assets/holiday-card.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left top;
+      cursor: default;
+    }
+
     @media(max-width: 640px) {
       height: 300px;
     }
