@@ -389,15 +389,14 @@ header {
         color: #222;
       }
     }
-    &.red-well {
-      background: #f1f1f1 url(/snippets/assets/red-well.png);
+    &.knight {
+      background: #f1f1f1 url(/snippets/assets/knight.png);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      cursor: default;
     }
-    &.knight {
-      background: #f1f1f1 url(/snippets/assets/knight.png);
+    &.red-well {
+      background: #f1f1f1 url(/snippets/assets/red-well.png);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -441,13 +440,6 @@ header {
       background-position: center;
       cursor: default;
     }
-    &.rescue-press {
-      background: #f1f1f1 url(/snippets/assets/rescuepress.png);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: left center;
-      cursor: default;
-    }
     &.WIO-banner {
       background: #f1f1f1 url(/snippets/assets/WIO-banner.svg);
       background-size: cover;
@@ -467,13 +459,6 @@ header {
       background-size: cover;
       background-repeat: no-repeat;
       background-position: left top;
-      cursor: default;
-    }
-    &.mage {
-      background: #f1f1f1 url(/snippets/assets/mage.png);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
       cursor: default;
     }
     &.g-listing {

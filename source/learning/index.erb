@@ -1,6 +1,143 @@
 <div class="container">
   <h1>D3</h1>
 
+<style>
+body {
+  padding: 20px;
+}
+</style>
+
+<style>
+.radar-chart {
+  fill: #fff;
+}
+.radar-chart .area {
+  fill-opacity: 0.7;
+}
+.radar-chart.focus .area {
+  fill-opacity: 0.3;
+}
+.radar-chart.focus .area.focused {
+  fill-opacity: 0.9;
+}
+.area.germany, .germany .circle {
+  fill: #FFD700;
+  stroke: none;
+}
+.area.argentina, .argentina .circle {
+  fill: #ADD8E6;
+  stroke: none;
+}
+</style>
+
+<script src="http://d3js.org/d3.v3.js"></script>
+<script src="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.js"></script>
+
+<script>
+  RadarChart.defaultConfig.color = function() {};
+  RadarChart.defaultConfig.radius = 3;
+  RadarChart.defaultConfig.w = 400;
+  RadarChart.defaultConfig.h = 400;
+</script>
+
+<span></span>
+
+<script>
+  var data = [
+    {
+      className: 'germany', // optional can be used for styling
+      axes: [
+        {axis: "strength", value: 13},
+        {axis: "intelligence", value: 6},
+        {axis: "charisma", value: 5},
+        {axis: "dexterity", value: 9},
+        {axis: "luck", value: 2}
+      ]
+    },
+    {
+      className: 'argentina',
+      axes: [
+        {axis: "strength", value: 6},
+        {axis: "intelligence", value: 7},
+        {axis: "charisma", value: 10},
+        {axis: "dexterity", value: 13},
+        {axis: "luck", value: 9}
+      ]
+    }
+  ];
+
+  function randomDataset() {
+    return data.map(function(d) {
+      return {
+        className: d.className,
+        axes: d.axes.map(function(axis) {
+          return {axis: axis.axis, value: Math.ceil(Math.random() * 10)};
+        })
+      };
+    });
+  }
+</script>
+
+<script>
+  var chart = RadarChart.chart();
+  var cfg = chart.config(); // retrieve default config
+  var svg = d3.select('body').append('svg')
+    .attr('width', cfg.w + cfg.w + 50)
+    .attr('height', cfg.h + cfg.h / 4);
+  svg.append('g').classed('single', 1).datum(randomDataset()).call(chart);
+</script>
+
+
+<!--
+  <h3>Donut Chart</h3>
+
+  <div id="donut"></div>
+    <script>
+      // Define the data as a two-dimensional array of numbers. If you had other
+      // data to associate with each number, replace each number with an object, e.g.,
+      // `{key: "value"}`.
+      var data = [
+        [ 90, 10],
+        [ 50, 50],
+        [ 75, 25],
+        [ 30, 70]
+      ];
+
+      // Define the margin, radius, and color scale. The color scale will be
+      // assigned by index, but if you define your data using objects, you could pass
+      // in a named field from the data object instead, such as `d.name`. Colors
+      // are assigned lazily, so if you want deterministic behavior, define a domain
+      // for the color scale.
+      var m = 20,
+          r = 50;
+
+      var color = d3.scale.ordinal()
+        .range(["#BBA94F", "#EDEFF0"]);
+
+      // Insert an svg:svg element (with margin) for each row in our dataset. A
+      // child svg:g element translates the origin to the pie center.
+      var svg = d3.select("#donut").selectAll("svg")
+          .data(data)
+          .enter().append("svg:svg")
+          .attr("width", (r + m) * 2)
+          .attr("height", (r + m) * 2)
+          .append("svg:g")
+          .attr("transform", "translate(" + (r + m) + "," + (r + m) + ")");
+
+      // The data for each svg:svg element is a row of numbers (an array). We pass
+      // that to d3.layout.pie to compute the angles for each arc. These start and end
+      // angles are passed to d3.svg.arc to draw arcs! Note that the arc radius is
+      // specified on the arc, not the layout.
+      svg.selectAll("path")
+         .data(d3.layout.pie())
+         .enter().append("svg:path")
+         .attr("d", d3.svg.arc()
+         .innerRadius(r / 2)
+         .outerRadius(r))
+         .style("fill", function(d, i) { return color(i); });
+   </script>
+   -->
+  <!--
   <div class="bar-chart">
     <h3>Bar Chart</h3>
   </div>
@@ -58,7 +195,7 @@
     <h3>Scatterplot</h3>
   </div>
 
- <script>
+  <script type="text/javascript">
     var w = 500;
     var h = 100;
     var dataset = [
@@ -115,4 +252,179 @@
       .attr("fill", "rgba(255,255,255,0.3)");
  </script>
 
+ <style>
+  .scales {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 2em;
+    padding: 0 0 2em 0;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: rgb(44, 173, 167);
+    shape-rendering: crispEdges;
+  }
+
+  .axis text {
+    fill: rgb(44, 173, 167);
+    font-family: sans-serif;
+    font-size: 11px;
+  }
+ </style>
+
+  <h3>Scales</h3>
+  <div class="scales"></div>
+
+  <h4>Questions</h4>
+  <p>How are these in order by size automatically?</p>
+  <p>How can I get these to appear in a more random order, (size and position)?</p>
+
+  <script type="text/javascript">
+
+    var dataset = [
+      [5, 1],
+      [10, 25],
+      [30, 14],
+      [145, 3],
+      [179, 101],
+      [20, 78],
+      [88, 5],
+      [49, 11],
+      [239, 110],
+      [95, 180]
+    ];
+
+    var w = 1000;
+    var h = 300;
+    var padding = 100;
+
+    var xScale  = d3.scale.linear()
+              .domain([0, d3.max(dataset, function(d) { return d[0]; })])
+              .range([padding, w - padding]);
+
+    var yScale  = d3.scale.linear()
+              .domain([0, d3.max(dataset, function(d) { return d[1]; })])
+              .range([padding, h - padding]);
+
+    var rScale  = d3.scale.linear()
+              .domain([0, d3.max(dataset, function(d) { return d[0]; })])
+              .range([0, 100]);
+
+    var xAxis = d3.svg.axis()
+              .scale(xScale)
+              .orient("bottom");
+
+    var color = d3.scale.linear()
+              .domain([0, d3.max(dataset, function(d) { return d[0]; })])
+              .range(["#2CC990", "#2C82C9"]);
+
+    var svg = d3.select(".scales")
+              .append("svg")
+              .attr("width", w)
+              .attr("height", h);
+
+    var circle = svg.selectAll("circle")
+              .data(dataset)
+              .enter()
+              .append("circle")
+              .attr("cx", function(d) { return xScale(d[0]); })
+              .attr("cy", function(d) { return yScale(d[1]); })
+              .attr("r", function(d) { return rScale(d[0]); })
+              .attr("fill", function(d) { return color(d[0]); });
+
+    //Create X axis
+    svg.append("g")
+        .attr("class", "axis")
+        .attr("transform", "translate(0," + (h - padding) + ")")
+        .call(xAxis);
+
+  </script>
+
+
+  <h3>Commuter Data</h3>
+  <div class="commute"></div>
+
+  <style>
+    .scales {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 2em;
+      padding: 0 0 2em 0;
+    }
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: rgb(44, 173, 167);
+      shape-rendering: crispEdges;
+    }
+
+    .axis text {
+      fill: rgb(44, 173, 167);
+      font-family: sans-serif;
+      font-size: 11px;
+    }
+  </style>
+
+  <script type="text/javascript">
+
+    var dataset = [
+      [5, 1, 6, 80],
+      [10, 25, 8, 24],
+      [30, 14, 46, 19],
+      [145, 3, 13, 71],
+      [179, 101, 23, 68],
+      [20, 78, 19, 89],
+      [88, 5, 74, 39],
+      [49, 11, 78, 31],
+      [239, 110, 22, 15],
+      [95, 180, 17, 99]
+    ];
+
+    var w = 1000;
+    var h = 300;
+    var padding = 100;
+
+    var xScale  = d3.scale.linear()
+    .domain([0, d3.max(dataset, function(d) { return d[0]; })])
+    .range([padding, w - padding]);
+
+    var yScale  = d3.scale.linear()
+    .domain([0, d3.max(dataset, function(d) { return d[1]; })])
+    .range([padding, h - padding]);
+
+    var rScale  = d3.scale.linear()
+    .domain([0, d3.max(dataset, function(d) { return d[0]; })])
+    .range([0, 100]);
+
+    var xAxis = d3.svg.axis()
+    .scale(xScale)
+    .orient("bottom");
+
+    var color = d3.scale.ordinal()
+    .domain([0, d3.max(dataset, function(d) { return d[0]; })])
+    .range(["#2CC990", "#2C82C9", "#E7E7DE", "#FF664A"]);
+
+    var svg = d3.select(".commute")
+    .append("svg")
+    .attr("width", w)
+    .attr("height", h);
+
+    var circle = svg.selectAll("circle")
+    .data(dataset)
+    .enter()
+    .append("circle")
+    .attr("cx", function(d) { return xScale(d[0]); })
+    .attr("cy", function(d) { return yScale(d[1]); })
+    .attr("r", function(d) { return rScale(d[0]); })
+    .attr("fill", function(d) { return color(d[0]); });
+
+    //Create X axis
+    svg.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(0," + (h - padding) + ")")
+    .call(xAxis);
+
+  </script>
+  -->
 </div>
