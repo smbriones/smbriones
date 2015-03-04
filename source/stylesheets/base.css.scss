@@ -134,6 +134,9 @@ ul {
 
 .column {
   margin: 2em 0;
+  @media(max-width: 640px) {
+    margin: 0;
+  }
 }
 
 header {
@@ -720,7 +723,10 @@ button, .button, a.button {
     margin: 0 0 1.5em 0;
   }
   img {
-    margin-bottom: 0.5em;
+    margin: 0 0 0.6em 0;
+    @media (max-width: 500px) {
+      margin: 0 0 0.5em 0;
+    }
   }
   .step {
     color: #fff;
@@ -730,6 +736,10 @@ button, .button, a.button {
     color: #919BA0;
     font-size: 0.7em;
     margin: -0.4em 0 1.5em 0;
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
   }
 }
 
