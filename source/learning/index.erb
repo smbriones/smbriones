@@ -1,5 +1,32 @@
-<div class="container">
-  <h1>D3</h1>
+<div class="container d3js">
+  <section>
+    <h5>Module 2</h5>
+    <h2>Data Visualization and Infographics with D3</h2>
+    <p>March 16 - April 26, 2015</p>
+  </section>
+  <section id="chart">
+    <svg width="427px" height="249px">
+      <rect fill="#50E3C2" x="43" y="0" width="249" height="249"></rect>
+      <rect fill="#4990E2" x="168" y="48" width="259" height="98"></rect>
+      <rect fill="#4990E2" x="0" y="133" width="86" height="86"></rect>
+    </svg>
+  </section>
+</div>
+
+<script type="text/javascript">
+  //Load in contents of CSV file
+  d3.csv("learning/d3/commute.csv", function(data) {
+
+  //Now CSV contents have been transformed into
+   //an array of JSON objects.
+
+  //Log 'data' to the console, for verification.
+  console.log(data);
+  });
+</script>
+
+
+<!--- Sandbox Code -->
 <!--
 <style>
 body {
@@ -427,4 +454,3 @@ body {
 
   </script>
   -->
-</div>
