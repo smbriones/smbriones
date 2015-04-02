@@ -1,10 +1,28 @@
 .d3js {
   h5 { margin-top: 5em; }
   h2 {
-    margin: 0 0 0 0;
+    color: #fff;
+    margin: 3em 0 1em 0;
   }
 }
 
-#chart {
+.chart-container {
   margin-top: 2em;
+}
+
+.exercise-description {
+  color: #8e979b;
+  max-width: 780px;
+}
+
+.bar-chart {
+  margin-bottom: 5em;
+  h2 {
+    margin: 0 0 0.2em 0;
+  }
+  p {
+    color: #8e979b;
+    font-size: 0.8em;
+    margin: 0 0 2em 0;
+  }
 }

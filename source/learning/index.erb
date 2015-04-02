@@ -1,10 +1,17 @@
 <div class="container d3js">
+  <h2>Data Visualization and Infographics with D3</h2>
   <section>
     <h5>Module 2</h5>
-    <h2>Data Visualization and Infographics with D3</h2>
-    <p>March 16 - April 26, 2015</p>
+    <p>March 22 - 28, 2015</p>
+    <p class="exercise-description">
+      EXERCISE: Create a web page that includes one SVG image.
+      Using D3, load your data into the page and log that data
+      to the console. (This will not yet be a visualization;
+      this is just evidence that the data is being loaded into
+      the page and D3 is parsing it correctly.)
+    </p>
   </section>
-  <section id="chart">
+  <section class="chart-container">
     <svg width="427px" height="249px">
       <rect fill="#50E3C2" x="43" y="0" width="249" height="249"></rect>
       <rect fill="#4990E2" x="168" y="48" width="259" height="98"></rect>
@@ -23,6 +30,104 @@
   //Log 'data' to the console, for verification.
   console.log(data);
   });
+</script>
+
+<div class="container d3js">
+  <section>
+    <h5>Module 3</h5>
+    <p>March 29 - April 4, 2015</p>
+    <p class="exercise-description">
+      EXERCISE: Make a horizontal bar chart using your own data set.
+      Bind your data to the rectangles, so each row of data is
+      expressed as a single rectangle. Map any one quantitative
+      (numeric) value in the data set to the width of each
+      rectangle.
+    </p>
+  </section>
+  <section class="chart-container">
+    <div class="bar-chart">
+      <h2>Commutes at 8th Light, Inc.</h2>
+      <p>Results based on responses from 50 employees</p>
+    </div>
+  </section>
+</div>
+
+<script type="text/javascript">
+    var data = [
+                  ["Bus", "3"],
+                  ["CTA", "20"],
+                  ["Cycle", "7"],
+                  ["Drive", "1"],
+                  ["Metra", "13"],
+                  ["Walk", "6"]
+                ];
+
+    var w = 700;
+    var h = 170;
+    var barPadding = 2;
+
+    var svg = d3.select(".bar-chart")
+        .append("svg")
+        .attr("width", w)
+        .attr("height", h);
+
+    var color = d3.scale
+                  .linear()
+                  .domain([1, 20])
+                  .range(["#4E585E", "#4990E2"]);
+
+    svg.selectAll("rect")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("x", 40)
+      .attr("y", function (d, i) {
+        return i * (h / data.length);
+      })
+      .attr("width", function (d) {
+        return d[1] * 30;
+      })
+      .attr("height", h / data.length - barPadding)
+      .attr("fill", function(d) {
+        return color(d[1]);
+    });
+
+    svg.selectAll("text")
+      .data(data)
+      .enter()
+      .append("text")
+      .text(function(d) {
+        return d[0];
+      })
+      .attr("x", function(d, i) {
+        return 0;
+      })
+      .attr("y", function(d, i) {
+        return 19 + i * 28;
+      })
+      .attr("font-family","brandon-grotesque","Helvetica", "sans-serif")
+      .attr("font-size", "12px")
+      .attr("fill", "#8e979b");
+
+
+    svg.selectAll(".label")
+  		.data(data)
+  		.enter()
+  		.append("text")
+  		.attr("class","label")
+      .attr("x", function(d, i) {
+        return d[1] * 30 + 22;
+      })
+      .attr("y", function(d, i) {
+        return 19 + i * 28;
+      })
+  		.attr("fill","#fff")
+      .attr("font-family","brandon-grotesque","Helvetica", "sans-serif")
+      .attr("font-size", "12px")
+  		.text(function(d) {
+        return d[1];
+      });
+    console.log(data);
 </script>
 
 
