@@ -53,6 +53,9 @@
 </div>
 
 <script type="text/javascript">
+  //Load in contents of CSV file
+  //d3.csv("learning/d3/commute-simple.csv", function(data) {
+
     var data = [
                   ["Bus", "3"],
                   ["CTA", "20"],
@@ -108,7 +111,6 @@
       .attr("font-family","brandon-grotesque","Helvetica", "sans-serif")
       .attr("font-size", "12px")
       .attr("fill", "#8e979b");
-
 
     svg.selectAll(".label")
   		.data(data)
