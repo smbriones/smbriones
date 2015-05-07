@@ -4,6 +4,9 @@
     color: #fff;
     margin: 3em 0 1em 0;
   }
+  section:last-child {
+    margin-bottom: 3em;
+  }
 }
 
 .chart-container {
@@ -15,8 +18,9 @@
   max-width: 780px;
 }
 
-.bar-chart {
-  margin-bottom: 5em;
+.bar-chart,
+.scatter-plot {
+  margin-bottom: 1em;
   h2 {
     margin: 0 0 0.2em 0;
   }
@@ -24,6 +28,10 @@
     color: #8e979b;
     font-size: 0.8em;
     margin: 0 0 2em 0;
+  }
+  a {
+    color: #8e979b;
+    text-decoration: underline;
   }
 }
 

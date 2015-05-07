@@ -58,6 +58,24 @@
       <p>Results based on responses from 50 employees</p>
     </div>
   </section>
+  <section>
+    <h5>Module 5</h5>
+    <p>April 13 - April 19, 2015</p>
+    <p class="exercise-description">
+      EXERCISE: Take the vertical bar chart from last week's exercise, and rework it as a
+      scatterplot. Choose a second quantitative value from your data set, and
+      map it to the x axis. Replace the rectangles with circles, so dots appear
+      at the x/y intersection of the two values. Make sure the axes correctly
+      label the new values. Post the bl.ocks.org link to your working chart in
+      the forums, and explain what the chart represents as well as your visual
+      design decisions.
+    </p>
+    <div class="scatter-plot">
+      <h2>Ice Cream Sales</h2>
+      <p>The warmer it gets, the more ice cream is sold.
+      <a href="https://www.mathsisfun.com/data/scatter-xy-plots.html">Resource</a></p>
+    </div>
+  </section>
 </div>
 
 <script type="text/javascript">
@@ -121,24 +139,6 @@
       .attr("font-size", "12px")
       .attr("fill", "#8e979b");
     
-    // svg.selectAll(".label")
-  		//.data(data)
-  		//.enter()
-  		//.append("text")
-  		//.attr("class","label")
-      //.attr("x", function(d, i) {
-      //  return d[1] * 30 + 22;
-      //})
-      //.attr("y", function(d, i) {
-        //return 19 + i * 28;
-      //})
-  		//.attr("fill","#fff")
-      //.attr("font-family","brandon-grotesque","Helvetica", "sans-serif")
-      //.attr("font-size", "12px")
-  		//.text(function(d) {
-        //return d[1];
-      //});
-
   var xScale = d3.scale.linear()
               .domain([0, 20])
               .range([0 + 40 , w - 60]);
@@ -158,6 +158,103 @@
     console.log(data);
 </script>
 
+<script type="text/javascript">
+  var w = 680;
+  var h = 350;
+  var padding = 60;
+
+  var dataset = [
+    ["14.2", "215"],
+    ["16.4", "325"],
+    ["11.9", "185"],
+    ["15.2", "332"],
+    ["18.5", "406"],
+    ["22.1", "522"],
+    ["19.4", "412"],
+    ["25.1", "614"],
+    ["23.4", "544"],
+    ["18.1", "421"],
+    ["22.6", "445"],
+    ["17.2", "408"]
+  ];
+
+  var svg = d3.select(".scatter-plot")
+  .append("svg")
+  .attr("width", w + padding)
+  .attr("height", h + padding);
+
+  var color = d3.scale
+                .linear()
+                .domain([0, 10])
+                .range(["#4E585E", "#4990E2"]);
+
+  var xScale = d3.scale.linear()
+                 .domain([10, 26])
+                 .range([0, w]);
+  
+  var yScale = d3.scale.linear()
+                 .domain([700, 0])
+                 .range([0, h]);
+
+  var xAxis = d3.svg.axis()
+                .scale(xScale)
+                .orient("bottom")
+                .ticks(10);
+
+  var yAxis = d3.svg.axis()
+                .scale(yScale)
+                .orient("left")
+                .ticks(10);
+
+
+  svg.selectAll("circle")
+  .data(dataset)
+  .enter()
+  .append("circle")
+  .attr("cx", function(d) {
+    return xScale(d[0]);
+  })
+  .attr("cy", function(d) {
+    return yScale(d[1]);
+  })
+  .attr("r", function(d) {
+    return d[1] / d[0];
+  })
+  .transition()
+  .delay(function(d, i) {
+    return i * 50;
+  })
+  .duration(250)
+  .attr("fill", function(d) {
+    return color(d[0]);
+  });
+
+// xAxis
+  svg.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(30," + (h + 10) + ")")
+      .call(xAxis);
+
+// yAxis
+  svg.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(" + (padding - 30) + ", 8)")
+      .call(yAxis);
+
+  svg.append("text")
+      .attr("class", "label")
+      .attr("y", (h + 35))
+      .attr("x", w/2 + 20)
+      .attr("dy", "1.6em")
+      .style("text-anchor", "middle")
+      .style("fill", "#ced3d5")
+      .style("font-size", "0.7em")
+      .style("font-weight", "500")
+      .style("text-transform", "uppercase")
+      .style("letter-spacing", "1px")
+      .text("Temperature °C");
+
+</script>
 
 <!--- Sandbox Code -->
 <!--
