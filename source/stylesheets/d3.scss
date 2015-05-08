@@ -19,7 +19,8 @@
 }
 
 .bar-chart,
-.scatter-plot {
+.scatter-plot,
+.line-chart {
   margin-bottom: 1em;
   h2 {
     margin: 0 0 0.2em 0;
@@ -48,3 +49,27 @@
   font-family: sans-serif;
   font-size: 11px;
 }
+
+.xaxis path,
+.xaxis line,
+.yaxis path,
+.yaxis line {
+  fill: none;
+  stroke: black;
+}
+
+.country-name {
+  margin: 0 !important;
+}
+
+.key-dot {
+  display: inline-block;
+  height: 10px;
+  margin-right: 1em;
+  width: 10px;
+}
+
+
+.uk { background: #042A7D; }
+.denmark { background: #C60C30; }
+.germany { background: #FFCE00; }
