@@ -1,5 +1,6 @@
 <div class="container d3js">
   <h2>Data Visualization and Infographics with D3</h2>
+  <p class="sub-title">March 16th - April 26th, 2015 · Alberto Cairo &amp; Scott Murray</p>
   <section>
     <h5>Module 2</h5>
     <p>March 22 - 28, 2015</p>
@@ -9,6 +10,7 @@
       to the console. (This will not yet be a visualization;
       this is just evidence that the data is being loaded into
       the page and D3 is parsing it correctly.)
+      <a href="http://bl.ocks.org/smbriones/5e192b6d249bdecb8147">View Code</a>
     </p>
   </section>
   <section class="chart-container">
@@ -21,15 +23,15 @@
 </div>
 
 <script type="text/javascript">
-  //Load in contents of CSV file
-  //d3.csv("learning/d3/commute.csv", function(data) {
+  // Load in contents of CSV file
+  d3.csv("learning/d3/commute.csv", function(data) {
 
   //Now CSV contents have been transformed into
    //an array of JSON objects.
 
   //Log 'data' to the console, for verification.
-  //console.log(data);
-  //});
+  console.log(data);
+  });
 </script>
 
 <div class="container d3js">
@@ -51,6 +53,7 @@
       a title and/or caption to provide context. Post the bl.ocks.org link to
       your working chart in the forums, and explain what the chart represents.
     </p>
+    <p><a href="http://bl.ocks.org/smbriones/0374c03557e0c09fe8b3">View Code</a></p>
   </section>
   <section class="chart-container">
     <div class="bar-chart">
@@ -69,12 +72,15 @@
       label the new values. Post the bl.ocks.org link to your working chart in
       the forums, and explain what the chart represents as well as your visual
       design decisions.
+      <a href="http://bl.ocks.org/smbriones/93b29226b7021e61de41">View Code</a>
     </p>
-    <div class="scatter-plot">
-      <h2>Ice Cream Sales</h2>
-      <p>The warmer it gets, the more ice cream is sold.
-      <a href="https://www.mathsisfun.com/data/scatter-xy-plots.html">Resource</a></p>
-    </div>
+    <section class="chart-container">
+      <div class="scatter-plot">
+        <h2>Ice Cream Sales</h2>
+        <p>The warmer it gets, the more ice cream is sold.
+        <a href="https://www.mathsisfun.com/data/scatter-xy-plots.html">Resource</a></p>
+      </div>
+    </section>
   </section>
   <section>
     <h5>Module 6</h5>
@@ -89,116 +95,25 @@
       Make sure the axes correctly label the new values. Post the bl.ocks.org
       link to your working chart in the forums, and explain what the chart
       represents as well as your visual design decisions.
+      <a href="http://bl.ocks.org/smbriones/e8b58d1e2c3c64eec1f8">View Code</a>
     </p>
-    <div class="line-chart">
-      <h2>Price of Fuel</h2>
-      <p>
-        Premium Unleaded fuel prices (pence per liter) from March 2014 to March
-        2015 for the UK, Denmark, and Germany.
-        <a href="https://www.gov.uk/government/statistical-data-sets/comparisons-of-industrial-and-domestic-energy-prices-monthly-figures">Resource</a></p>
-      </p>
-      <p class="country-name"><span class="key-dot uk"></span>UK</p>
-      <p class="country-name"><span class="key-dot denmark"></span>Denmark</p>
-      <p class="country-name"><span class="key-dot germany"></span>Germany</p>
-    </div>
+    <section class="chart-container">
+      <div class="line-chart">
+        <h2>Price of Fuel</h2>
+        <p>
+          Premium Unleaded fuel prices (pence per liter) from March 2014 to March
+          2015 for the UK, Denmark, and Germany.
+          <a href="https://www.gov.uk/government/statistical-data-sets/comparisons-of-industrial-and-domestic-energy-prices-monthly-figures">Resource</a></p>
+        </p>
+        <p class="country-name"><span class="key-dot uk"></span>UK</p>
+        <p class="country-name"><span class="key-dot denmark"></span>Denmark</p>
+        <p class="country-name"><span class="key-dot germany"></span>Germany</p>
+      </div>
+    </section>
   </section>
 </div>
 
 <script type="text/javascript">
-  var w = 900
-  var h = 500
-  var padding = [ 40, 40, 40, 30 ]; //Top, right, bottom, left
-
-  var dateFormat = d3.time.format("%m/%d/%Y")
-
-  var xScale = d3.time.scale()
-            .range([ padding[3], w - padding[1] - padding[3] ]);
-
-  var yScale = d3.scale.linear()
-            .range ([ padding[0], h - padding[2] ]);          
-
-  var xAxis = d3.svg.axis()
-          .scale(xScale)
-          .orient("bottom")
-          .ticks(12)
-          .tickFormat(function(d) {
-            return dateFormat(d);
-          });
-
-  var yAxis = d3.svg.axis()
-          .scale(yScale)
-          .orient("left")
-          .ticks(7);
-
-  var lineUK = d3.svg.line()
-          .x(function(d) { return xScale(dateFormat.parse(d.date)); })
-          .y(function(d) { return yScale(d.UK); });
-
-  var lineDenmark = d3.svg.line()
-          .x(function(d) { return xScale(dateFormat.parse(d.date)); })
-          .y(function(d) { return yScale(d.Denmark); });               
-
-  var lineGermany = d3.svg.line()
-          .x(function(d) { return xScale(dateFormat.parse(d.date)); })
-          .y(function(d) { return yScale(d.Germany); });
-
-  var svg = d3.select(".line-chart")
-    .append("svg")
-    .attr("width", w)
-    .attr("height", h);
-  
-  d3.csv("learning/d3/data.csv", function(data) {
-
-      xScale.domain([ 
-        d3.min(data, function(d) { return dateFormat.parse(d.date);
-        }), 
-        d3.max(data, function(d) { return dateFormat.parse(d.date);
-        }) 
-      ]);
-
-      yScale.domain([80, 20]);
-
-    svg.data([ data ])
-      .append("path")
-      .attr("class", "line")
-      .attr("d", lineUK)
-      .attr("fill", "none")
-      .attr("stroke", "#042A7D")
-      .attr("stroke-width", 3);
-
-    svg.data([ data ])
-      .append("path")
-      .attr("class", "line")
-      .attr("d", lineDenmark)
-      .attr("fill", "none")
-      .attr("stroke", "#C60C30")
-      .attr("stroke-width", 3);
-
-    svg.data([ data ])
-      .append("path")
-      .attr("class", "line")
-      .attr("d", lineGermany)
-      .attr("fill", "none")
-      .attr("stroke", "#FFCE00")
-      .attr("stroke-width", 3);
-
-    svg.append("g")
-      .attr("class", "axis")
-      .attr("transform", "translate(0," + (h - padding[2]) + ")")
-      .call(xAxis);
-
-    svg.append("g")
-      .attr("class", "axis")
-      .attr("transform", "translate(" + (padding[3] - 5) + ",0)")
-      .call(yAxis);
-
-    });
-</script>
-
-<!--
-<script type="text/javascript">
-  //Load in contents of CSV file
-  //d3.csv("learning/d3/commute-simple.csv", function(data) {
 
   var data = [
                 ["Bus", "3"],
@@ -373,8 +288,97 @@
       .text("Temperature °C");
 
 </script>
--->
 
+<script type="text/javascript">
+  var w = 900
+  var h = 500
+  var padding = [ 40, 40, 40, 30 ]; //Top, right, bottom, left
+
+  var dateFormat = d3.time.format("%m/%d/%Y")
+
+  var xScale = d3.time.scale()
+            .range([ padding[3], w - padding[1] - padding[3] ]);
+
+  var yScale = d3.scale.linear()
+            .range ([ padding[0], h - padding[2] ]);          
+
+  var xAxis = d3.svg.axis()
+          .scale(xScale)
+          .orient("bottom")
+          .ticks(12)
+          .tickFormat(function(d) {
+            return dateFormat(d);
+          });
+
+  var yAxis = d3.svg.axis()
+          .scale(yScale)
+          .orient("left")
+          .ticks(7);
+
+  var lineUK = d3.svg.line()
+          .x(function(d) { return xScale(dateFormat.parse(d.date)); })
+          .y(function(d) { return yScale(d.UK); });
+
+  var lineDenmark = d3.svg.line()
+          .x(function(d) { return xScale(dateFormat.parse(d.date)); })
+          .y(function(d) { return yScale(d.Denmark); });               
+
+  var lineGermany = d3.svg.line()
+          .x(function(d) { return xScale(dateFormat.parse(d.date)); })
+          .y(function(d) { return yScale(d.Germany); });
+
+  var svg = d3.select(".line-chart")
+    .append("svg")
+    .attr("width", w)
+    .attr("height", h);
+  
+  d3.csv("learning/d3/data.csv", function(data) {
+
+      xScale.domain([ 
+        d3.min(data, function(d) { return dateFormat.parse(d.date);
+        }), 
+        d3.max(data, function(d) { return dateFormat.parse(d.date);
+        }) 
+      ]);
+
+      yScale.domain([80, 20]);
+
+    svg.data([ data ])
+      .append("path")
+      .attr("class", "line")
+      .attr("d", lineUK)
+      .style("fill", "none")
+      .attr("stroke", "#042A7D")
+      .attr("stroke-width", 3);
+
+    svg.data([ data ])
+      .append("path")
+      .attr("class", "line")
+      .attr("d", lineDenmark)
+      .attr("fill", "none")
+      .attr("stroke", "#C60C30")
+      .attr("stroke-width", 3);
+
+    svg.data([ data ])
+      .append("path")
+      .attr("class", "line")
+      .attr("d", lineGermany)
+      .attr("fill", "none")
+      .attr("stroke", "#FFCE00")
+      .attr("stroke-width", 3);
+
+    svg.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(0," + (h - padding[2]) + ")")
+      .call(xAxis);
+
+    svg.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(" + (padding[3] - 5) + ",0)")
+      .call(yAxis);
+
+    });
+</script>
 
 <!--- Sandbox Code -->
 <!--
