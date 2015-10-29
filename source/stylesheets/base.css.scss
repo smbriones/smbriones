@@ -418,6 +418,12 @@ header {
       background-repeat: no-repeat;
       background-position: center;
     }
+    &.zapier-books {
+      background: url(/snippets/assets/zapier-books.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
     &.fletching {
       background: url(/snippets/assets/fletching.png);
       background-size: cover;
@@ -715,6 +721,11 @@ button, .button, a.button {
   h2 {
     font-size: 1.3em;
     line-height: 1.4em;
+  }
+  h4 {
+    color: #C7CDD0;
+    font-size: 0.8em;
+    font-weight: 500;
   }
   h5 {
     margin: 1em 0;
