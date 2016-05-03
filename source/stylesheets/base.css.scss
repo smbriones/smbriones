@@ -424,6 +424,15 @@ header {
       background-repeat: no-repeat;
       background-position: center;
     }
+    &.zapier-editor {
+      background: url(/snippets/assets/zapier-editor.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      p {
+        color: #222;
+      }
+    }
     &.fletching {
       background: url(/snippets/assets/fletching.png);
       background-size: cover;
