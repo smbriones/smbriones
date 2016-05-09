@@ -623,6 +623,9 @@ button, .button, a.button {
 
 .tag {
   border: 1px solid $mustard;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
   color: $white;
   font-size: 0.6em;
   text-transform: uppercase;

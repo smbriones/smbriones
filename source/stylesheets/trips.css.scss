@@ -130,6 +130,13 @@ a {
     }
   }
 
+  &.new-orleans-hero {
+    background-image: url(/images/new-orleans/nola-hero.jpg);
+    @media (max-width: 600px) {
+      background-image: none;
+    }
+  }
+
   @media (max-width: 600px) {
     height: auto;
   }
@@ -215,6 +222,27 @@ header {
     }
   }
 
+  &.new-orleans-logo {
+    background: rgba(78, 187, 175, 0.8);
+    padding: 9.8em 0;
+    @media (max-width: 600px) {
+      background: rgba(78, 187, 175, 1);
+      padding: 12em 0 3.5em 0;
+    }
+    img {
+      max-width: 720px;
+    }
+  }
+
+  span {
+    color: rgba(255, 255, 255, 0.5);
+    display: block;
+    font-size: 0.4em;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: 0.2em;
+  }
+
   @media (max-width: 600px) {
     position: relative;
     padding: 12em 0 3.5em 0;
@@ -234,14 +262,6 @@ header {
     }
   }
 
-  span {
-    color: rgba(255, 255, 255, 0.5);
-    display: block;
-    font-size: 0.4em;
-    font-weight: 400;
-    letter-spacing: 2px;
-    margin-top: 0.2em;
-  }
 }
 
 .intro {
