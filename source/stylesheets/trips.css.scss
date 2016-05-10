@@ -345,6 +345,21 @@ section {
   border-radius: 50%;
 }
 
+.home-banner {
+  background: lighten($light-gray, 7%);
+  border: 1px solid lighten($light-gray, 3%);
+  border-radius: 3px;
+  color: darken(#a5b0be, 10%);
+  margin: 1em;
+  padding: 1em;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    &:hover { color: darken(#a5b0be, 20%); }
+  }
+}
+
 .cf:before,
 .cf:after,
 .row:before,
