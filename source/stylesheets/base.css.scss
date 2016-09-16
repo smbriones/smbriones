@@ -1,18 +1,19 @@
 @import "compass/css3/box-sizing";
 
-$dark-gray: #404c51;
-$light-gray: #ced3d5;
+$dark-gray: #2b363c;
+$light-gray: #9eacb3;
 $red: #ff574a;
 $white: #fff;
-$mustard: #bba94f;
+$mustard: #79A0C6;
+$blue: #79A0C6;
 
 *, *:before, *:after {
   @include box-sizing(border-box);
 }
 
 body {
-  background: #3A4449;
-  color: #C7CDD0;
+  background: $white;
+  color: $light-gray;
   font-family: "brandon-grotesque",sans-serif;
   font-size: 110%;
   font-style: normal;
@@ -20,7 +21,7 @@ body {
 }
 
 a {
-  color: $white;
+  color: $dark-gray;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -28,7 +29,7 @@ a {
 }
 
 ::selection {
-  background: $light-gray;
+  background: $blue;
   color: $white;
 }
 
@@ -50,7 +51,9 @@ hr {
   margin-bottom: 1.5em;
 }
 
-h1, h2, h3, h4, h5 { color: $white; }
+h1, h2, h3, h4, h5 {
+  color: $dark-gray;
+}
 
 h1 {
   font-family: "brandon-grotesque",sans-serif;
@@ -84,7 +87,6 @@ h4 {
 h5 {
   font-size: 0.7em;
   font-weight: 600;
-  color: $mustard;
   letter-spacing: 1px;
   margin: 0 0 1.8em 0;
   text-transform: uppercase;
@@ -119,12 +121,6 @@ ul {
   article {
     clear: both;
   }
-  &.work {
-    margin-top: 2em;
-    @media (max-width: 840px) {
-      margin-top: 1em;
-    }
-  }
 }
 
 .row {
@@ -140,12 +136,11 @@ ul {
 }
 
 header {
-  background: $dark-gray;
   overflow: hidden;
   padding: 1.6em 0;
   h2 {
     border-bottom: none;
-    color: #fff;
+    color: $light-gray;
     display: inline-block;
     float: none;
     font-size: 1em;
@@ -161,18 +156,16 @@ header {
 
 .links {
   overflow: hidden;
-  @media (min-width: 840px) {
-    float: right;
-  }
+  float: right;
+
   li {
     display: inline-block;
-    font-size: 0.8em;
+    font-size: 1em;
     margin: 0;
     padding-right: 2em;
     a {
       color: #99a3a8;
       display: inline-block;
-      font-size: 1em;
       font-weight: 500;
       text-decoration: none;
       &:hover {
@@ -180,7 +173,6 @@ header {
       }
     }
     @media (min-width: 840px) {
-      font-size: 1em;
       padding-right: 2em;
     }
     &:last-child {
@@ -190,16 +182,15 @@ header {
   &.footer {
     display: block;
   }
-  .work-link {
-    display: none;
-    @media (min-width: 900px) {
-      display: inline-block;
-    }
+  .work-link a {
+    color: $dark-gray;
+    border-bottom: 2px solid $blue;
+    font-weight: 700;
   }
 }
 
 .sub-nav {
-  background: darken($dark-gray, 6%);
+  background: $blue;
   padding: 0 1em;
   text-align: center;
   ul {
@@ -222,47 +213,48 @@ header {
   margin: 0;
 }
 
-.intro {
-  padding: 8em 0;
-  text-align: center;
-  h1 {
-    color: $white;
-    font-size: 2.2em;
-    line-height: 1.2em;
-    letter-spacing: 2px;
-    margin: 0.5em 0 0.2em 0;
-    text-transform: uppercase;
+.simple-about {
+  color: $dark-gray;
+  font-size: 1.8em;
+  font-weight: 800;
+  width: 100%;
+  margin: 2em 0 0.6em 0;
+  @media(min-width: 480px) {
+    font-size: 2.6em;
+    max-width: 78%;
   }
-  h3 {
-    color: $mustard;
-    font-size: 0.8em;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-align: center;
-    text-transform: uppercase;
-    @media(max-width: 480px) {
-      font-size: 0.6em;
-    }
+}
+
+.about-cont {
+  font-size: 1.1em;
+  font-weight: 600;
+  float: right;
+  margin-bottom: 5em;
+  width: 100%;
+  margin: 0 0 4em 0;
+  @media(min-width: 480px) {
+    width: 310px;
   }
-  a {
-    color: $light-gray;
-    text-decoration: none;
-    &:hover {
-      color: $mustard;
-    }
-  }
+
+  .insta-link { color: #833ab4; }
+  .gh-link { color: #4183c4; }
+  .dribbble-link { color: #ea4c89; }
+
 }
 
 .cards {
   width: 100%;
   li {
+    background: $white;
+    border: 1px solid #eee;
+    border-radius: 3px;
     color: #4D4D4D;
     display: block;
     padding: 1.5em;
     text-align: center;
     width: 100%;
     margin: 1em 0 0 0;
-    background: #fff;
+
     &:first-child {
       margin-top: 0;
     }
@@ -300,17 +292,28 @@ header {
   overflow: hidden;
   li {
     float: left;
-    margin: 0;
+    margin: 0 0 2% 2%;
     position: relative;
-    width: 50%;
+    width: 49%;
+    opacity: 0.8;
+
+    &:nth-child(odd) {
+      margin-left: 0;
+    }
     @media(max-width: 640px) {
       margin-bottom: 1em;
       width: 100%;
     }
+    &:hover {
+      opacity: 1;
+      transition:opacity 0.1s linear;
+    }
   }
 
   a {
+    border-radius: 5px;
     background: $dark-gray;
+    color: $white;
     cursor: pointer;
     display: block;
     height: 450px;
@@ -318,6 +321,12 @@ header {
     position: relative;
     text-decoration: none;
 
+    &.open-mentor {
+      background: #2F68AA url(/work/projects/assets/open-mentor.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
     &.adventures {
       background: #4ebb94 url(/work/projects/assets/adventures.png);
       background-size: 260px;
@@ -622,7 +631,7 @@ button, .button, a.button {
 }
 
 .tag {
-  border: 1px solid $mustard;
+  background: $blue;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
@@ -631,11 +640,11 @@ button, .button, a.button {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 0.4em;
-  font-weight: 400;
-  padding: 0.8em 0.7em 0.6em 0.8em;
+  font-weight: 600;
+  padding: 0.7em 0.6em 0.4em 0.7em;
   display: inline-block;
   line-height: 1em;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 .blend {
@@ -661,14 +670,14 @@ button, .button, a.button {
 /*------  Apprenticeship  ------*/
 
 .link-section {
-  a { color: $white; }
+  a { color: $light-gray; }
 }
 
 .apprenticeship-header {
   h2 {
-    color: $white;
+    color: $dark-gray;
     font-size: 1em;
-    font-weight: 400;
+    font-weight: 700;
     margin: 0 0 1em 0;
     @media (min-width: 840px) {
       float: left;
@@ -682,10 +691,10 @@ button, .button, a.button {
 }
 
 .syllabus-nav {
-  border-bottom: 1px solid darken($dark-gray, 5%);
+  border-bottom: 1px solid #eee;
   padding: 1em 0;
   a {
-    color: $white;
+    color: $light-gray;
     font-size: 0.9em;
     display: block;
     padding: 0.5em 0;
@@ -735,7 +744,7 @@ button, .button, a.button {
     line-height: 1.4em;
   }
   h4 {
-    color: #C7CDD0;
+    color: $light-gray;
     font-size: 0.8em;
     font-weight: 500;
   }
@@ -746,6 +755,7 @@ button, .button, a.button {
     margin: 0 0 1.5em 0;
   }
   img {
+    border-radius: 5px;
     margin: 0 0 0.6em 0;
     @media (max-width: 500px) {
       margin: 0 0 0.5em 0;
@@ -814,14 +824,6 @@ section {
 
 
 /*------  Media Queries  ------*/
-
-@media (min-width: 500px) {
-  .intro {
-    padding: 12em 0;
-    display: block;
-    width: 100%;
-  }
-}
 
 @media (min-width: 840px) {
   .column {
@@ -907,33 +909,6 @@ section {
       &:first-child {
         margin-left: 0;
       }
-    }
-  }
-}
-
-@media (min-width: 1100px) {
-  .intro {
-    h4 {
-      margin: 0.3em 0 0.2em 0;
-      font-size: 1.6em;
-    }
-    h5 {
-      margin: 0 0 1.5em 0;
-    }
-    .divide {
-      margin: 0.6em 0 0 0;
-      padding-bottom: 0.5em;
-    }
-  }
-}
-
-@media (min-width: 1400px) {
-  .intro {
-    h4 {
-      font-size: 1.8em;
-    }
-    h5 {
-      margin: 0 0 3em 0;
     }
   }
 }
