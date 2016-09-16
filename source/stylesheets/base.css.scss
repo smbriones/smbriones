@@ -6,6 +6,8 @@ $red: #ff574a;
 $white: #fff;
 $mustard: #79A0C6;
 $blue: #79A0C6;
+$highlighter: #f9f771;
+$article-text: #82929a;
 
 *, *:before, *:after {
   @include box-sizing(border-box);
@@ -13,7 +15,7 @@ $blue: #79A0C6;
 
 body {
   background: $white;
-  color: $light-gray;
+  color: $article-text;
   font-family: "brandon-grotesque",sans-serif;
   font-size: 110%;
   font-style: normal;
@@ -29,8 +31,8 @@ a {
 }
 
 ::selection {
-  background: $blue;
-  color: $white;
+  background: $highlighter;
+  color: $dark-gray;
 }
 
 img {
@@ -656,7 +658,7 @@ button, .button, a.button {
 }
 
 .divide {
-  border-top: 1px solid $light-gray;
+  border-top: 1px solid #ced3d5;
   display: block;
   margin: 0 auto;
   margin-top: 1em;
