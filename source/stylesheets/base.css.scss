@@ -370,51 +370,51 @@ header {
     }
 
     &.artisan {
-      background: #f1f1f1 url(/snippets/assets/artisan.png);
+      background: #f1f1f1 url(/work/projects/assets/artisan.png);
       background-size: 400px;
       background-repeat: no-repeat;
       background-position: center;
       p { color: #222; }
     }
     &.knight {
-      background: url(/snippets/assets/knight.png);
+      background: url(/work/projects/assets/knight.png);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
     }
     &.practice-areas {
-      background: url(/snippets/assets/vision-icons.png);
+      background: url(/work/projects/assets/vision-icons.png);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
     }
     &.zapier-books {
-      background: url(/snippets/assets/zapier-books.png);
+      background: url(/work/projects/assets/zapier-books.png);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
     }
     &.zapier-editor {
-      background: url(/snippets/assets/zapier-editor.png);
+      background: url(/work/projects/assets/zapier-editor.png);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       p { color: #222; }
     }
     &.fletching {
-      background: url(/snippets/assets/fletching.png);
+      background: url(/work/projects/assets/fletching.png);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
     }
     &.axus {
-      background: url(/snippets/assets/axus.png);
+      background: url(/work/projects/assets/axus.png);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
     }
     &.jetset {
-      background: url(/snippets/assets/jetset.png);
+      background: url(/work/projects/assets/jetset.png);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -424,6 +424,7 @@ header {
 
     p {
       background: rgba(0,0,0,0.1);
+      border-radius: 0 0 5px 5px;
       font-size: 1.2em;
       line-height: 1.2em;
       margin: 0;
