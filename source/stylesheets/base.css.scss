@@ -2,9 +2,7 @@
 
 $dark-gray: #2b363c;
 $light-gray: #9eacb3;
-$red: #ff574a;
 $white: #fff;
-$mustard: #79A0C6;
 $blue: #79A0C6;
 $highlighter: #f9f771;
 $article-text: #82929a;
@@ -117,7 +115,7 @@ ul {
 }
 
 button, .button, a.button {
-  background: $mustard;
+  background: $blue;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -128,7 +126,7 @@ button, .button, a.button {
   text-decoration: none;
   transition: background 0.1s linear;
   &.landing {
-    border: 2px solid $mustard;
+    border: 2px solid $blue;
     background: transparent;
     font-size: 0.8em;
     letter-spacing: 1px;
@@ -139,7 +137,7 @@ button, .button, a.button {
     }
   }
   &:hover {
-    background: $mustard;
+    background: $blue;
     color: #fff;
   }
 }
@@ -161,8 +159,15 @@ button, .button, a.button {
 .column {
   margin: 2em 0;
   @media(max-width: 640px) {
-    margin: 0;
+    margin: 0 0 2em 0;
   }
+}
+
+.notice {
+  background: $light-gray;
+  color: $white;
+  text-align: center;
+  a { color: $white; }
 }
 
 header {
@@ -199,7 +204,7 @@ header {
       font-weight: 500;
       text-decoration: none;
       &:hover {
-        color: $mustard;
+        color: $blue;
       }
     }
     @media (min-width: 840px) {
@@ -496,17 +501,12 @@ header {
 
     &:first-child { margin-top: 0; }
     &:last-child { margin-bottom: 1em; }
-    a { color: $mustard; }
+    a { color: $blue; }
     a:last-child {
       display: block;
       margin-top: 3em;
       text-align: center;
     }
-  }
-  .reverse {
-    background: $red;
-    color: $white;
-    a { color: $white; }
   }
 }
 

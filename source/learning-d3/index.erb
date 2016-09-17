@@ -177,7 +177,7 @@ title: sb · Learning
       .attr("font-family","brandon-grotesque","Helvetica", "sans-serif")
       .attr("font-size", "12px")
       .attr("fill", "#8e979b");
-    
+
   var xScale = d3.scale.linear()
               .domain([0, 20])
               .range([0 + 40 , w - 60]);
@@ -230,7 +230,7 @@ title: sb · Learning
   var xScale = d3.scale.linear()
                  .domain([10, 26])
                  .range([0, w]);
-  
+
   var yScale = d3.scale.linear()
                  .domain([700, 0])
                  .range([0, h]);
@@ -306,7 +306,7 @@ title: sb · Learning
             .range([ padding[3], w - padding[1] - padding[3] ]);
 
   var yScale = d3.scale.linear()
-            .range ([ padding[0], h - padding[2] ]);          
+            .range ([ padding[0], h - padding[2] ]);
 
   var xAxis = d3.svg.axis()
           .scale(xScale)
@@ -327,7 +327,7 @@ title: sb · Learning
 
   var lineDenmark = d3.svg.line()
           .x(function(d) { return xScale(dateFormat.parse(d.date)); })
-          .y(function(d) { return yScale(d.Denmark); });               
+          .y(function(d) { return yScale(d.Denmark); });
 
   var lineGermany = d3.svg.line()
           .x(function(d) { return xScale(dateFormat.parse(d.date)); })
@@ -337,14 +337,14 @@ title: sb · Learning
     .append("svg")
     .attr("width", w)
     .attr("height", h);
-  
+
   d3.csv("learning/d3/data.csv", function(data) {
 
-      xScale.domain([ 
+      xScale.domain([
         d3.min(data, function(d) { return dateFormat.parse(d.date);
-        }), 
+        }),
         d3.max(data, function(d) { return dateFormat.parse(d.date);
-        }) 
+        })
       ]);
 
       yScale.domain([80, 20]);
