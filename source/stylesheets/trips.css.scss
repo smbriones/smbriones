@@ -117,14 +117,14 @@ a {
   height: 100vh;
 
   &.belfast-hero {
-    background-image: url(/images/belfast-hero.jpg);
+    background-image: url(/images/belfast/belfast-hero.jpg);
     @media (max-width: 600px) {
       background-image: none;
     }
   }
 
   &.california-hero {
-    background-image: url(/images/mountains.jpg);
+    background-image: url(/images/california/mountains.jpg);
     @media (max-width: 600px) {
       background-image: none;
     }
