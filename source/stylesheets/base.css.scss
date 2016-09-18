@@ -343,10 +343,11 @@ header {
       @media(max-width: 840px) { background-size: 200px; }
     }
     &.apprenticeship {
-      background: $dark-gray url(/work/projects/assets/apprenticeship.png);
-      background-size: 100px;
+      background: #F1F4F5 url(/work/projects/assets/apprenticeship.png);
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      p { color: #222; }
     }
     &.nocci {
       background: #2a9dbe url(/work/projects/assets/nocci.png);
@@ -355,10 +356,11 @@ header {
       background-position: center;
     }
     &.craftsman-swap {
-      background: #5D45A0 url(/work/projects/assets/apprenticeship.png);
-      background-size: 100px;
+      background: #F1F4F5 url(/work/projects/assets/craftsman-swap.png);
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      p { color: #222; }
     }
     &.animations {
       background: #fafafa url(/work/projects/assets/animations.png);
