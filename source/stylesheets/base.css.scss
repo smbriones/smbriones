@@ -382,7 +382,7 @@ header {
       background-repeat: no-repeat;
       background-position: center;
     }
-    &.practice-areas {
+    &.vision-app {
       background: url(/work/projects/assets/vision-icons.png);
       background-size: cover;
       background-repeat: no-repeat;
@@ -498,7 +498,7 @@ header {
   width: 100%;
   li {
     background: $white;
-    border: 1px solid #eee;
+    border: 1px solid #e5eaec;
     border-radius: 3px;
     color: #4D4D4D;
     display: block;
@@ -549,7 +549,7 @@ header {
 }
 
 .syllabus-nav {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e5eaec;
   padding: 1em 0;
   a {
     color: $light-gray;
