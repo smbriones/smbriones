@@ -7,13 +7,13 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= data.page.title || "Stephanie Briones" %></title>
-    <%= stylesheet_link_tag "normalize", "base", "learning-js", "d3" %>
+    <%= stylesheet_link_tag "normalize", "base", "d3" %>
     <%= javascript_include_tag  "all" %>
     <link href="images/favicon.ico" rel="icon" type="image/ico" />
     <script src="//use.typekit.net/blr5lzf.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
-    <script src="../learning/d3/d3.v3.js"></script>
-        <script type="text/javascript">
+    <script src="../learning-d3/d3/d3.v3.js"></script>
+    <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-28582549-1']);
       _gaq.push(['_trackPageview']);
@@ -22,7 +22,7 @@
        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
        })();
-     </script>
+    </script>
   </head>
   <body>
     <%= yield %>

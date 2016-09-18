@@ -30,7 +30,7 @@ title: sb · Learning
 
 <script type="text/javascript">
   // Load in contents of CSV file
-  d3.csv("learning/d3/commute.csv", function(data) {
+  d3.csv("learning-d3/d3/commute.csv", function(data) {
 
   //Now CSV contents have been transformed into
    //an array of JSON objects.
@@ -88,6 +88,7 @@ title: sb · Learning
       </div>
     </section>
   </section>
+
   <section>
     <h5>Module 6</h5>
     <p>April 20 - April 26, 2015</p>
@@ -299,15 +300,11 @@ title: sb · Learning
   var w = 900
   var h = 500
   var padding = [ 40, 40, 40, 30 ]; //Top, right, bottom, left
-
   var dateFormat = d3.time.format("%m/%d/%Y")
-
   var xScale = d3.time.scale()
             .range([ padding[3], w - padding[1] - padding[3] ]);
-
   var yScale = d3.scale.linear()
             .range ([ padding[0], h - padding[2] ]);
-
   var xAxis = d3.svg.axis()
           .scale(xScale)
           .orient("bottom")
@@ -315,48 +312,39 @@ title: sb · Learning
           .tickFormat(function(d) {
             return dateFormat(d);
           });
-
   var yAxis = d3.svg.axis()
           .scale(yScale)
           .orient("left")
           .ticks(7);
-
   var lineUK = d3.svg.line()
           .x(function(d) { return xScale(dateFormat.parse(d.date)); })
           .y(function(d) { return yScale(d.UK); });
-
   var lineDenmark = d3.svg.line()
           .x(function(d) { return xScale(dateFormat.parse(d.date)); })
           .y(function(d) { return yScale(d.Denmark); });
-
   var lineGermany = d3.svg.line()
           .x(function(d) { return xScale(dateFormat.parse(d.date)); })
           .y(function(d) { return yScale(d.Germany); });
-
   var svg = d3.select(".line-chart")
     .append("svg")
     .attr("width", w)
     .attr("height", h);
 
-  d3.csv("learning/d3/data.csv", function(data) {
-
+  d3.csv("learning-d3/d3/data.csv", function(data) {
       xScale.domain([
         d3.min(data, function(d) { return dateFormat.parse(d.date);
         }),
         d3.max(data, function(d) { return dateFormat.parse(d.date);
         })
       ]);
-
       yScale.domain([80, 20]);
-
     svg.data([ data ])
       .append("path")
       .attr("class", "line")
       .attr("d", lineUK)
-      .style("fill", "none")
+      .attr("fill", "none")
       .attr("stroke", "#042A7D")
       .attr("stroke-width", 3);
-
     svg.data([ data ])
       .append("path")
       .attr("class", "line")
@@ -364,7 +352,6 @@ title: sb · Learning
       .attr("fill", "none")
       .attr("stroke", "#C60C30")
       .attr("stroke-width", 3);
-
     svg.data([ data ])
       .append("path")
       .attr("class", "line")
@@ -372,17 +359,14 @@ title: sb · Learning
       .attr("fill", "none")
       .attr("stroke", "#FFCE00")
       .attr("stroke-width", 3);
-
     svg.append("g")
       .attr("class", "axis")
       .attr("transform", "translate(0," + (h - padding[2]) + ")")
       .call(xAxis);
-
     svg.append("g")
       .attr("class", "axis")
       .attr("transform", "translate(" + (padding[3] - 5) + ",0)")
       .call(yAxis);
-
     });
 </script>
 
