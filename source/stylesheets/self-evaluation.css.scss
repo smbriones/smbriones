@@ -1,0 +1,51 @@
+// Self-Evaluation of Skills
+
+$dark-gray: #2b363c;
+$light-gray: #9eacb3;
+$white: #fff;
+$blue: #79A0C6;
+$highlighter: #f9f771;
+$article-text: #82929a;
+
+h2 {
+  font-weight: 700;
+  margin: 1em 0 0 0;
+}
+
+h4 { font-size: 1.2em; }
+
+h5 {
+  color: $light-gray;
+  margin-bottom: 0.5em;
+}
+
+p { margin: 0.5em 0 1em 0; }
+section { margin-bottom: 1.5em; }
+
+.bar {
+  border-radius: 1em;
+  height: 1em;
+  width: 100%;
+  margin-bottom: 1em;
+}
+.level {
+  border-radius: 1em;
+  display: block;
+  height: 1em;
+  &.expert {
+    background: $blue;
+    width: 95%;
+  }
+  &.advanced {
+    background: #79c6a8;
+    width: 80%;
+  }
+  &.intermediate {
+    background: #c6c279;
+    width: 60%;
+  }
+  &.novice {
+    background: #c4a3cc;
+    width: 35%;
+  }
+}
