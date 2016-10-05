@@ -53,7 +53,10 @@ h1 {
   @media (max-width: 800px) {
     background: $white;
     padding: 0;
-    .container { margin: 0; }
+    .container {
+      margin: 0;
+      width: 100%;
+    }
   }
   p, span {
     font-family: skolar-sans-latin, sans-serif;
