@@ -1,0 +1,60 @@
+---
+layout: photo-day
+---
+
+<%= partial "partials/header" %>
+
+<div class="container photos">
+  <img class="photo cover" src="/photo-day/images/cover.JPG">
+  <img class="photo yellow" src="/photo-day/images/yellow.JPG">
+  <img class="photo fireplace" src="/photo-day/images/fireplace.JPG">
+  <img class="photo tile" src="/photo-day/images/tile.JPG">
+  <img class="photo letter-a" src="/photo-day/images/letter-a.JPG">
+  <img class="photo leaves" src="/photo-day/images/leaves.JPG">
+  <img class="photo necklaces" src="/photo-day/images/necklaces.JPG">
+  <img class="photo sidewalk" src="/photo-day/images/sidewalk.JPG">
+  <img class="photo glass" src="/photo-day/images/glass.JPG">
+  <img class="photo window" src="/photo-day/images/window.JPG">
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close">×</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var images = document.getElementsByClassName('photo');
+    var modalPlaceholderImg = document.getElementById("img01");
+    for (var imageIndex in images) {
+      // Given an imageIndex (0, 1, 2, 3, 4...), we need to get the image
+      // associated with that index out of the images array.
+      // Example: images = [<img id="0"...>, <img id="1"...>, <img id="2"...>]
+      // if imageIndex = 0
+      // then images[imageIndex] = <img id="0" ...>
+      var image = images[imageIndex];
+      console.log(image);
+      image.onclick = function(){
+        console.log(imageIndex);
+        // Show the modal
+        modal.style.display = "block";
+        // Update the modal placeholder image's src to the current image's src
+        modalPlaceholderImg.src = this.src;
+      }
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+  </script>
+</div>
+
+<%= partial "partials/footer" %>
