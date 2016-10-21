@@ -309,6 +309,18 @@ header {
     position: relative;
     text-decoration: none;
 
+    &.mars-poster {
+      background: #2F68AA url(/work/projects/assets/mars-2.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &.bit-bank {
+      background: #2F68AA url(/work/projects/assets/bit-logo.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
     &.open-mentor {
       background: #2F68AA url(/work/projects/assets/open-mentor.png);
       background-size: cover;
