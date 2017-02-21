@@ -149,6 +149,9 @@ button, .button, a.button {
   article {
     clear: both;
   }
+  .footnotes {
+    margin-top: 2em;
+  }
 }
 
 .row {
@@ -309,6 +312,12 @@ header {
     position: relative;
     text-decoration: none;
 
+    &.type {
+      background: #F6EFFF url(/work/projects/assets/type.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
     &.mars-poster {
       background: #F2EBE6 url(/work/projects/assets/mars-2.png);
       background-size: 90%;
@@ -627,6 +636,13 @@ header {
     margin: 0 0 0.6em 0;
     @media (max-width: 500px) { margin: 0 0 0.5em 0; }
   }
+  small {
+    display: inline-block;
+    margin-bottom: 2em;
+  }
+  .border {
+    border: 1px solid #e5eaec;
+  }
   .step {
     color: #fff;
     margin: 0.5em 0;
@@ -639,6 +655,15 @@ header {
       color: inherit;
       text-decoration: underline;
     }
+  }
+  &.type {
+    max-width: 900px;
+    p { margin-bottom: 2em; }
+    a {
+      color: $article-text;
+      text-decoration: underline;
+    }
+    a:hover { color: darken($article-text, 10%); }
   }
 }
 
