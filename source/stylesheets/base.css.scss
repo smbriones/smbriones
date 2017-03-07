@@ -312,6 +312,12 @@ header {
     position: relative;
     text-decoration: none;
 
+    &.rosa {
+      background: #F6EFFF url(/work/projects/assets/rosa-logo@2x.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
     &.type {
       background: #F6EFFF url(/work/projects/assets/type.png);
       background-size: cover;
